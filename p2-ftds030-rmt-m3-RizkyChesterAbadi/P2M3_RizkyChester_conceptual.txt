@@ -1,0 +1,133 @@
+# Conseptual Problem:
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+
+
+
+
+# Jawaban
+1. NoSQL adalah singkatan dari "Not Only SQL" yang artinya mengacu pada jenis Database yang berbeda dengan Database relasional.Dalam NoSQL, data disimpan dalam bentuk yang tidak terstruktur atau semi-terstruktur, dan sering dirancang untuk mendukung kinerja dan skala tinggi dalam aplikasi web modern, big data, dan komputasi terdistribusi.
+ * Beberapa jenis database NoSQL,antara lain:
+
+    Document Store: Menyimpan data dalam dokumen, seperti JSON atau BSON. Contoh :MongoDB.
+
+    Key-Value Store: Data disimpan dalam bentuk pasangan Key-value. Contoh:Redis dan Amazon DynamoDB.
+
+    Column Store: Data disimpan dalam kolom, bukan dalam baris seperti database relasional. Contoh: Apache Cassandra dan HBase.
+
+    Graph Database: Dirancang untuk menyimpan dan memanipulasi data dalam bentuk graf. Contoh: Neo4j dan Amazon Neptune.
+
+2. * Menggunakan NoSQL:
+
+    Skala Data Besar dan Data Terdistribusi: Untuk mengelola volume data yang sangat besar atau membutuhkan skala horizontal yang mudah, NoSQL bisa menjadi pilihan yang baik karena dirancang untuk menangani beban kerja yang sangat besar dengan cara yang lebih efisien daripada RDBMS.
+
+    Fleksibilitas Skema: Jika struktur data cenderung berubah-ubah secara dinamis atau memiliki skema yang kompleks, NoSQL dapat memberikan fleksibilitas yang lebih besar karena tidak membutuhkan skema yang ketat.
+
+    Model Data yang Tidak Terstruktur atau Semi-Terstruktur: Jika data Anda memiliki struktur yang tidak teratur atau semi-terstruktur, seperti data JSON atau XML, NoSQL mungkin lebih cocok karena memungkinkan penyimpanan dan manipulasi data semacam itu dengan lebih baik.
+
+    Kinerja Tinggi untuk Banyak Akses Data: Saat membutuhkan kinerja tinggi untuk banyak akses data secara bersamaan, NoSQL lebih cocok digunakan karena desainnya yang terdistribusi dan kemampuan untuk menyimpan data dalam format yang lebih efisien.
+
+* Menggunakan RDBMS:
+
+    Integritas Data yang Konsisten: Saat membutuhkan transaksi ACID (Atomicity, Consistency, Isolation, Durability) yang ketat, seperti sistem keuangan atau manufaktur, RDBMS adalah pilihan yang lebih baik karena dukungan yang kuat untuk integritas data.
+
+    Struktur Data yang Terstruktur dan Terhubung: Jika data memiliki skema yang tetap dan terstruktur dengan baik, serta memiliki banyak relasi antar entitas, RDBMS dapat menyediakan keunggulan dalam hal konsistensi dan integritas referensial.
+
+    Fleksibilitas Querying Kompleks: Saat aplikasi membutuhkan kemampuan untuk melakukan query kompleks yang melibatkan join dan aggregasi data, RDBMS mungkin lebih cocok karena SQL (Structured Query Language) yang kuat dan matang.
+
+    Keamanan dan Kepatuhan: Jika aplikasi memiliki persyaratan keamanan yang tinggi atau harus mematuhi standar kepatuhan yang ketat, RDBMS seringkali menawarkan fitur keamanan dan audit yang lebih matang.
+
+Pemilihan antara NoSQL dan RDBMS seringkali merupakan keputusan yang kompleks dan tergantung pada banyak faktor, dan dalam beberapa kasus, mungkin lebih cocok untuk menggunakan kombinasi keduanya dalam arsitektur data yang disebut sebagai "polyglot persistence".
+
+3. - MongoDB, adalah database NoSQL berbasis dokumen yang menyimpan data dalam format JSON atau BSON.
+ - Keunggulan MongoDB:	    
+	Fleksibilitas Skema: MongoDB tidak memerlukan skema yang tetap, sehingga memungkinkan perubahan struktur data secara dinamis tanpa harus mendefinisikan skema terlebih dahulu.
+	Dokumentasi yang Kaya: Data disimpan dalam dokumen JSON yang memungkinkan penyimpanan struktur data yang kompleks dengan cara yang intuitif dan efisien.
+	Skalabilitas Horizontal: MongoDB dirancang untuk skala horizontal melalui sharding, yang membagi data ke beberapa server atau Cluster untuk mendukung beban kerja yang berat.
+	Replikasi dan Ketersediaan Tinggi: Mendukung replikasi data secara otomatis dengan mekanisme replica set, memastikan ketersediaan dan redundansi data.
+	Ekosistem dan Integrasi: MongoDB memiliki ekosistem yang luas dengan berbagai alat dan integrasi yang mendukung pengembangan, administrasi, dan analisis data.
+
+  - Redis, adalah database NoSQL jenis key-value yang disimpan di memori dan sering digunakan sebagai cache, message broker, dan database.
+ - Keunggulan Redis:
+	Kecepatan Tinggi: Redis sangat cepat karena menyimpan data di memori, dengan latensi rendah yang mendukung kecepatan baca dan tulis yang sangat tinggi.
+	Struktur Data Kaya: Redis mendukung berbagai tipe data seperti strings, lists, sets, sorted sets, hashes, bitmaps, hyperloglogs, dan geospatial indexes.
+ 	Persistensi Data: Meski Redis adalah in-memory database, ia juga mendukung persistensi data melalui snapshotting (RDB) dan append-only file (AOF), sehingga data tidak hilang saat reboot.
+	Replikasi dan Sharding: Redis mendukung replikasi master-slave untuk ketersediaan data dan sharding untuk skala horizontal, memungkinkan penanganan beban kerja besar dengan mudah.
+	Ekosistem dan Modul: Redis memiliki ekosistem yang luas dan mendukung berbagai modul tambahan seperti RedisJSON, RedisSearch, dan RedisGraph yang memperluas fungsionalitas Redis.
+
+
+4. * Apache Airflow merupakan platform Open-Source yang digunakan untuk Menjadwalkan dan memonitor workflow (Alur kerja) sebuah data. Airflow sangat berguna dalam proses ETL (Extract, Transform, Load), dimana data diekstrak dari sumber DATA, ditransformasi menjadi format seperti yang diinginkan, lalu dimuat ke tujuan akhir.
+	* Komponen Utama Airflow terdiri dari :
+	- Directed Acyclic Graphs (DAGs): merupakan representasi grafis dari alur kerja. DAG terdiri dari serangkaian tugas 	  (tasks) yang memiliki urutan dan ketergantungan tertentu
+	- Operators : Merupakan komponen yang menentukan tindakan apa yang dilakukan oleh setiap tugas dalam DAG.
+	- Sensors : Adalah jenis operator khusus yang terus-menerus memeriksa kondisi tertentu sebelum menjalankan tugas 	  berikutnya. Contohnya, sensor dapat menunggu hingga file tertentu muncul di direktori atau hingga tugas tertentu 	  selesai di database
+	- Scheduler : bertugas untuk memantau DAGs dan mengeksekusi tugas pada waktu yang dijadwalkan. Scheduler memastikan 	  bahwa semua tugas dijalankan sesuai dengan ketergantungan dan urutan yang ditentukan dalam DAG.
+	- Executor : Executor menentukan bagaimana tugas dieksekusi, baik secara lokal di mesin yang sama dengan scheduler, 	  atau secara terdistribusi di cluster.
+	- Web UI : Airflow menyediakan antarmuka pengguna web yang intuitif untuk memantau dan mengelola DAGs. Melalui web 	  UI, pengguna dapat melihat status alur kerja, memeriksa log tugas, dan menjalankan atau menjadwalkan ulang tugas
+
+
+5. * Great Expectation adalah sebuah open source yang digunakan untuk validasi, dokumentasi, dan profil data. Ini membantu memastikan bahwa data yang digunakan dalam analisis atau aplikasi memenuhi harapan tertentu dalam hal kualitas, konsistensi, dan integritas. Great Expectations memungkinkan pengguna untuk mendefinisikan dan menjalankan tes otomatis pada data mereka untuk memastikan bahwa data tersebut sesuai dengan spesifikasi yang telah ditentukan.
+
+ * Komponen Utama Great Expectation:
+	 Expectations: Merupakan inti dari Great Expectations. Expectations adalah pernyataan atau aturan yang mendefinisikan apa yang diharapkan dari data. Misalnya, "kolom ini harus memiliki nilai yang unik", atau "tidak boleh ada nilai null di kolom ini". Expectations dapat didefinisikan untuk berbagai aspek data seperti tipe data, rentang nilai, distribusi, dan hubungan antar kolom.
+
+	Data Context: Data Context adalah konfigurasi yang mengelola semua informasi dan sumber daya yang diperlukan oleh Great Expectations untuk menjalankan validasi. Ini mencakup definisi expectations, konfigurasi sumber data, dan pengaturan untuk hasil validasi.
+
+	Validation: Adalah proses validasi yang melibatkan penerapan expectations pada dataset untuk memeriksa apakah data memenuhi aturan yang ditentukan. Hasil validasi kemudian memberikan informasi tentang apakah data lulus atau gagal dalam setiap tes.
+
+	Data Docs: Great Expectations menghasilkan dokumentasi otomatis dari proses validasi dalam bentuk laporan yang disebut Data Docs. Laporan ini menyediakan tampilan yang mudah dibaca dan interaktif dari hasil validasi, membantu pengguna memahami kualitas data mereka dengan lebih baik.
+
+	Profiling: Profiling adalah proses otomatis untuk mengidentifikasi pola dan karakteristik dalam dataset, yang kemudian dapat digunakan untuk membuat expectations awal. Profiling membantu pengguna memulai dengan cepat dengan mengusulkan aturan yang relevan berdasarkan analisis data awal.
+
+* Keunggulan Great Expectations:
+
+    Automasi dan Konsistensi: Dengan Great Expectations, pengguna dapat mengotomatisasi proses validasi data yang berulang, memastikan konsistensi dalam pengecekan kualitas data tanpa intervensi manual.
+
+    Fleksibilitas dan Ekstensibilitas: Great Expectations menyediakan banyak expectations bawaan dan memungkinkan pengguna untuk membuat expectations kustom sesuai kebutuhan spesifik mereka.
+
+    Integrasi Luas: Great Expectations dapat diintegrasikan dengan berbagai alat dan platform data seperti Pandas, SQL, Apache Spark, dan alat orkestrasi alur kerja seperti Apache Airflow.
+
+    Dokumentasi Otomatis: Alat ini menghasilkan dokumentasi yang mudah dibaca dan dipahami, membantu tim data dan pemangku kepentingan lainnya untuk melihat dan memahami kualitas data dengan cepat.
+
+    Peningkatan Kualitas Data: Dengan menerapkan expectations secara konsisten, organisasi dapat meningkatkan kualitas data mereka secara keseluruhan, mengurangi risiko kesalahan data, dan meningkatkan kepercayaan dalam pengambilan keputusan berbasis data.
+
+* Contoh penggunaan: 
+	- ETL Pipelines: Memastikan bahwa data yang diekstrak, ditransformasi, dan dimuat memenuhi spesifikasi yang diharapkan sebelum dimasukkan ke dalam data warehouse atau sistem analitik.
+	- Data Science: Memvalidasi dataset yang digunakan dalam pelatihan dan pengujian model machine learning untuk memastikan bahwa data tersebut bersih dan konsisten.
+
+
+
+6. * Batch Processing, Adalah metode eksekusi program komputer di mana data atau tugas diproses secara kelompok atau "batch" pada interval tertentu, bukan diproses secara Continue atau secara real-time. Dalam batch processing, tugas-tugas dikumpulkan, dieksekusi bersamaan, dan hasilnya disimpan untuk kemudian diakses atau digunakan. Pendekatan ini sering digunakan ketika mengelola volume data yang besar atau tugas yang memerlukan banyak komputasi yang tidak perlu segera diselesaikan.
+
+	* Contoh Penggunaan Batch Processing:
+	- Pengolahan Big Data (Big Data Processing): Memproses log server web, data transaksi bisnis, atau data sensor dari perangkat IoT dalam jumlah besar untuk analisis dan laporan.
+
+	- Laporan Keuangan dan Akuntansi: Menjalankan laporan keuangan harian, mingguan, atau bulanan, di mana semua transaksi dikumpulkan dan dihitung dalam satu batch.
+
+	- Pemrosesan Payroll: Menghitung gaji karyawan, pemotongan pajak, dan tunjangan yang dilakukan secara periodik, biasanya setiap minggu atau bulan.
+
+	- Backup dan Pemulihan Data: Melakukan pencadangan data di luar jam kerja untuk meminimalkan gangguan pada sistem operasional.
+
+* Tools untuk Batch Processing: Apache Hadoop, Apache Spark, Spring Batch, AWS Batch.
+
+* Keuntungan Batch Processing:
+
+    Efisiensi: Memproses data dalam batch dapat lebih efisien karena meminimalkan overhead yang terkait dengan menjalankan tugas-tugas secara individual.
+    Skalabilitas: Batch processing dapat dengan mudah di-scale up untuk menangani volume data yang besar.
+    Otomasi: Tugas-tugas batch dapat dijadwalkan untuk dijalankan secara otomatis pada waktu tertentu, mengurangi kebutuhan akan intervensi manual.
+    Toleransi Kesalahan: Sistem batch processing biasanya dirancang untuk menangani kegagalan dengan baik, misalnya dengan kemampuan untuk memulai ulang tugas yang gagal.
+
+ * Kekurangan Batch Processing
+
+    Latensi: Karena data diproses dalam batch pada interval tertentu, mungkin ada keterlambatan antara waktu data dihasilkan dan waktu data tersebut diproses.
+    Tidak Real-Time: Batch processing tidak cocok untuk aplikasi yang memerlukan pemrosesan data secara real-time atau hampir real-time.
+	
